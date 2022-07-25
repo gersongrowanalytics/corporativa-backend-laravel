@@ -25,11 +25,11 @@ class ConectarAzureController extends Controller
 
         $user = Socialite::driver('azure')->user();
 
-        $uaz = uazusuariosazure::where('uazemail', $user->mail)->first();
+        $uaz = uazusuariosazure::where('uazemail', $user->user->mail)->first();
 
         $tokenlogin = Str::random(60);
 
-        $usu = usuusuarios::where('usuusuario', $user->mail)->first();
+        $usu = usuusuarios::where('usuusuario', $user->user->mail)->first();
 
         if($uaz){
 
