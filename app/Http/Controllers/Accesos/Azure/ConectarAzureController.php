@@ -27,7 +27,7 @@ class ConectarAzureController extends Controller
 
         // dd($user->user['mail']);
 
-        $uaz = uazusuariosazure::where('uazemail', $user->user['mail'])->first();
+        $uaz = uazusuariosazure::where('uazmail', $user->user['mail'])->first();
 
         $tokenlogin = Str::random(60);
 
