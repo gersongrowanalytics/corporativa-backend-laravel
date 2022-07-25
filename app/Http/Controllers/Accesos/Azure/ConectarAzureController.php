@@ -42,7 +42,7 @@ class ConectarAzureController extends Controller
             $uaz->uazidob               = $user->id;
             $uaz->uaznickname           = $user->nickname;
             $uaz->uazname               = $user->name;
-            $uaz->uazemailtec           = $user->emailtec;
+            $uaz->uazemailtec           = $user->email;
             $uaz->uazavatar             = $user->avatar;
             $uaz->uazdisplayName        = $user->user['displayName'];
             $uaz->uazgivenName          = $user->user['givenName'];
@@ -67,7 +67,7 @@ class ConectarAzureController extends Controller
             $uazn->uazidob               = $user->id;
             $uazn->uaznickname           = $user->nickname;
             $uazn->uazname               = $user->name;
-            $uazn->uazemailtec           = $user->emailtec;
+            $uazn->uazemailtec           = $user->email;
             $uazn->uazavatar             = $user->avatar;
             $uazn->uazdisplayName        = $user->user['displayName'];
             $uazn->uazgivenName          = $user->user['givenName'];
