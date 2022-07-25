@@ -25,68 +25,68 @@ class ConectarAzureController extends Controller
 
         $user = Socialite::driver('azure')->user();
 
-        dd($user->user['mail']);
+        // dd($user->user['mail']);
 
-        // $uaz = uazusuariosazure::where('uazemail', $user->user->mail)->first();
+        $uaz = uazusuariosazure::where('uazemail', $user->user['mail'])->first();
 
-        // $tokenlogin = Str::random(60);
+        $tokenlogin = Str::random(60);
 
-        // $usu = usuusuarios::where('usuusuario', $user->user->mail)->first();
+        $usu = usuusuarios::where('usuusuario', $user->user['mail'])->first();
 
-        // if($uaz){
+        if($uaz){
 
-        //     if($usu){
-        //         $uaz->usuid = $usu->usuid;
-        //     }
+            if($usu){
+                $uaz->usuid = $usu->usuid;
+            }
 
-        //     $uaz->uazidob               = $user->id;
-        //     $uaz->uaznickname           = $user->nickname;
-        //     $uaz->uazname               = $user->name;
-        //     $uaz->uazemailtec           = $user->emailtec;
-        //     $uaz->uazavatar             = $user->avatar;
-        //     $uaz->uazdisplayName        = $user->user->displayName;
-        //     $uaz->uazgivenName          = $user->user->givenName;
-        //     $uaz->uazmail               = $user->user->mail;
-        //     $uaz->uazmobilePhone        = $user->user->mobilePhone;
-        //     $uaz->uazjobTitle           = $user->user->jobTitle;
-        //     $uaz->uazofficeLocation     = $user->user->officeLocation;
-        //     $uaz->uazpreferredLanguage  = $user->user->preferredLanguage;
-        //     $uaz->uazsurname            = $user->user->surname;
-        //     $uaz->uazuserPrincipalName  = $user->user->userPrincipalName;
+            $uaz->uazidob               = $user->id;
+            $uaz->uaznickname           = $user->nickname;
+            $uaz->uazname               = $user->name;
+            $uaz->uazemailtec           = $user->emailtec;
+            $uaz->uazavatar             = $user->avatar;
+            $uaz->uazdisplayName        = $user->user['displayName'];
+            $uaz->uazgivenName          = $user->user['givenName'];
+            $uaz->uazmail               = $user->user['mail'];
+            $uaz->uazmobilePhone        = $user->user['mobilePhone'];
+            $uaz->uazjobTitle           = $user->user['jobTitle'];
+            $uaz->uazofficeLocation     = $user->user['officeLocation'];
+            $uaz->uazpreferredLanguage  = $user->user['preferredLanguage'];
+            $uaz->uazsurname            = $user->user['surname'];
+            $uaz->uazuserPrincipalName  = $user->user['userPrincipalName'];
 
-        //     $uaz->uaztokenlogin = $tokenlogin;
-        //     $uaz->update();
+            $uaz->uaztokenlogin = $tokenlogin;
+            $uaz->update();
 
-        // }else{
-        //     $uazn = new uazusuariosazure;
+        }else{
+            $uazn = new uazusuariosazure;
 
-        //     if($usu){
-        //         $uaz->usuid = $usu->usuid;
-        //     }
+            if($usu){
+                $uazn->usuid = $usu->usuid;
+            }
 
-        //     $uazn->uazidob               = $user->id;
-        //     $uazn->uaznickname           = $user->nickname;
-        //     $uazn->uazname               = $user->name;
-        //     $uazn->uazemailtec           = $user->emailtec;
-        //     $uazn->uazavatar             = $user->avatar;
-        //     $uazn->uazdisplayName        = $user->user->displayName;
-        //     $uazn->uazgivenName          = $user->user->givenName;
-        //     $uazn->uazmail               = $user->user->mail;
-        //     $uazn->uazmobilePhone        = $user->user->mobilePhone;
-        //     $uazn->uazjobTitle           = $user->user->jobTitle;
-        //     $uazn->uazofficeLocation     = $user->user->officeLocation;
-        //     $uazn->uazpreferredLanguage  = $user->user->preferredLanguage;
-        //     $uazn->uazsurname            = $user->user->surname;
-        //     $uazn->uazuserPrincipalName  = $user->user->userPrincipalName;
+            $uazn->uazidob               = $user->id;
+            $uazn->uaznickname           = $user->nickname;
+            $uazn->uazname               = $user->name;
+            $uazn->uazemailtec           = $user->emailtec;
+            $uazn->uazavatar             = $user->avatar;
+            $uazn->uazdisplayName        = $user->user['displayName'];
+            $uazn->uazgivenName          = $user->user['givenName'];
+            $uazn->uazmail               = $user->user['mail'];
+            $uazn->uazmobilePhone        = $user->user['mobilePhone'];
+            $uazn->uazjobTitle           = $user->user['jobTitle'];
+            $uazn->uazofficeLocation     = $user->user['officeLocation'];
+            $uazn->uazpreferredLanguage  = $user->user['preferredLanguage'];
+            $uazn->uazsurname            = $user->user['surname'];
+            $uazn->uazuserPrincipalName  = $user->user['userPrincipalName'];
 
-        //     $uazn->uaztokenlogin = $tokenlogin;
-        //     $uazn->save();
-        // }
+            $uazn->uaztokenlogin = $tokenlogin;
+            $uazn->save();
+        }
 
-        // header("Location: http://localhost:3001/login-azure/".$tokenlogin);
-        // exit();
+        header("Location: http://localhost:3001/login-azure/".$tokenlogin);
+        exit();
 
-        // dd($user);
+        dd($user);
 
         // token
         // id
