@@ -89,7 +89,7 @@ class ConectarAzureController extends Controller
             $uazn->save();
         }
 
-        header("Location: http://localhost:3001/login-azure/".$tokenlogin);
+        header("Location: https://palmas.grow-corporate.com/login-azure/".$tokenlogin);
         exit();
 
         // token
