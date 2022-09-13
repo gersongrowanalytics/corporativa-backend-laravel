@@ -25,7 +25,7 @@ class ConectarAzureController extends Controller
 
         $user = Socialite::driver('azure')->user();
 
-        // dd($user);
+        dd($user);
 
         $emailutilizar = $user->user['mail'];
 
